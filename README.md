@@ -20,9 +20,9 @@ This repo is a quick introduction to typescript.
   - [Object Types](#object-types)
   - [Function types](#function-types)
 - [Fluent Interfaces](#fluent-interfaces)
+- [Decorators](#decorators)
 - [Modules](#modules)
   - [Internal Modules](#internal-modules)
-  - [Decorators](#decorators)
   - [External Modules](#external-modules)
     - [Using AMD (RequireJS)](#using-amd-requirejs)
 - [Typescript ES6/7 features support](#typescript-es67-features-support)
@@ -348,25 +348,6 @@ let calc = new BasicCalculator(2)
 console.log(calc); // 11
 ```
 
-# Modules
-* Convenient way of sharing code between files
-
-## Internal Modules
-* No need to _import_ them
-* If modules are in separate files, you need to reference them with ```/// <reference path="path/to/file.ts">``` and load the js files in the proper sequence, based on dependencies.
-
-```javascript
-namespace App.Math{
-    export function add(a,b){
-        return a+b;
-    }
-}
-
-let sum = App.Math.add(5,12);
-
-console.log(sum);
-```
-
 ## Decorators
 A decorator is an expression that evaluates to a`function` that takes the `target`, `name`, and `property` descriptor as _arguments_ and optionally returns a property descriptor to install on the target object.
 
@@ -396,6 +377,24 @@ function enumerable(value) {
 }
 ```
 
+# Modules
+* Convenient way of sharing code between files
+
+## Internal Modules
+* No need to _import_ them
+* If modules are in separate files, you need to reference them with ```/// <reference path="path/to/file.ts">``` and load the js files in the proper sequence, based on dependencies.
+
+```javascript
+namespace App.Math{
+    export function add(a,b){
+        return a+b;
+    }
+}
+
+let sum = App.Math.add(5,12);
+
+console.log(sum);
+```
 
 ## External Modules
 If you want to use external modules, you have to decide which module system to use and then compile your sources using the **--module** compiler flag. Possible values are **_amd_**, **_commonjs_**, **umd** and **system**.
