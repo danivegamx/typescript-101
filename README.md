@@ -1,6 +1,32 @@
 # Typescript 101
 This repo is a quick introduction to typescript.
 
+# Contents
+- [References](#references)
+- [Install Typescript](#install-typescript)
+- [Using Typescript Compiler](#using-typescript-compiler)
+- [Typescript Types](#typescript-types)
+  - [Basic Type Examples](#basic-type-examples)
+  - [Union types](#union-types)
+  - [Intersection types](#intersection-types)
+- [Classes](#classes)
+  - [Inheritance](#inheritance)
+  - [Public / Private Modifiers](#public--private-modifiers)
+  - [Accessors (Getters/Setters)](#accessors-getterssetters)
+  - [Static Properties](#static-properties)
+  - [Abstract classes and methods](#abstract-classes-and-methods)
+- [Interfaces](#interfaces)
+  - [Class Types](#class-types)
+  - [Object Types](#object-types)
+  - [Function types](#function-types)
+- [Fluent Interfaces](#fluent-interfaces)
+- [Modules](#modules)
+  - [Internal Modules](#internal-modules)
+  - [Decorators](#decorators)
+  - [External Modules](#external-modules)
+    - [Using AMD (RequireJS)](#using-amd-requirejs)
+- [Typescript ES6/7 features support](#typescript-es67-features-support)
+
 # References
 * Handbook - http://www.typescriptlang.org/Handbook
 * Wiki - https://github.com/Microsoft/TypeScript/wiki
@@ -282,25 +308,6 @@ let greetings: IGreet = (n: string): string => `Say Hello to ${n}`
 console.log(greetings("BlackJack"));
 ```
 
-# Modules
-* Convenient way of sharing code between files
-
-## Internal Modules
-* No need to _import_ them
-* If modules are in separate files, you need to reference them with ```/// <reference path="path/to/file.ts">``` and load the js files in the proper sequence, based on dependencies.
-
-```javascript
-namespace App.Math{
-    export function add(a,b){
-        return a+b;
-    }
-}
-
-let sum = App.Math.add(5,12);
-
-console.log(sum);
-```
-
 ## Fluent Interfaces
 * A fluent interface is an implementation of an object oriented API that aims to provide more readable code.
 
@@ -339,6 +346,25 @@ let calc = new BasicCalculator(2)
     .currentValue();
 
 console.log(calc); // 11
+```
+
+# Modules
+* Convenient way of sharing code between files
+
+## Internal Modules
+* No need to _import_ them
+* If modules are in separate files, you need to reference them with ```/// <reference path="path/to/file.ts">``` and load the js files in the proper sequence, based on dependencies.
+
+```javascript
+namespace App.Math{
+    export function add(a,b){
+        return a+b;
+    }
+}
+
+let sum = App.Math.add(5,12);
+
+console.log(sum);
 ```
 
 ## Decorators
@@ -416,7 +442,7 @@ export class DataService implements IDataService {
 }
 ```
 
-## Typescript ES6/7 features support
+# Typescript ES6/7 features support
 > Support for ES5 transpile with `Typescript 1.7` compiler
 
 | Feature | Information | Support |
