@@ -458,8 +458,8 @@ export class DataService implements IDataService {
 | let / const | [`let`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/let) / [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) | YES |
 | for...of | [`for (variable of iterable){}`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/for...of) | YES |
 | Symbols | [`Symbol([description])`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol) | NO |
-| Iterators | [`Symbol.iterator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators) | NO* |
-| Generators | [`function* (){ yield /*...*/ }`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator) | NO |
+| Iterators | [`Symbol.iterator`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators) | NO |
+| Generators | [`function* (){ yield /*...*/ }`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator) | NO* |
 | Modules | [`import`](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) / [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) | YES |
 | Map/Set | [`new Map([iterable])`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Map) / [`new Set(iterable)`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Set) | NO |
 | WeakMap/WeakSet | [`new WeakMap([iterable])`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/WeakMap) / [` new WeakSet([iterable])`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/WeakSet) | NO |
