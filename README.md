@@ -5,6 +5,7 @@ This repo is a quick introduction to typescript.
 - [References](#references)
 - [Install Typescript](#install-typescript)
 - [Using Typescript Compiler](#using-typescript-compiler)
+  - [tsconfig.json](#tsconfig.json)
 - [Typescript Types](#typescript-types)
   - [Basic Type Examples](#basic-type-examples)
   - [Union types](#union-types)
@@ -47,10 +48,47 @@ tsc test.ts -w
 
 // change output filename
 tsc myfile.ts myoutput.js
-
-// compile multiple ts file in one
-tsc a.ts b.ts --out myoutput.js
 ```
+
+## tsconfig.json
+
+The presence of a `tsconfig.json` file in a directory indicates that the directory is the root of a TypeScript project. The `tsconfig.json` file specifies the root files and the compiler options required to compile the project. 
+> Just run `tsc` and it will look for `tsconfig.json` in the current as well as all parent folders till it finds it.
+
+```json
+{
+  "compilerOptions": {
+    "module": "amd",
+    "sourceMap": true,
+    "target": "ES5",
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "files": [
+    "app.ts",
+    "books.ts"
+  ]
+}
+```
+
+```json
+{
+  "exclude": [
+    "node_modules",
+    "test"
+  ]
+}
+```
+
+The `"compilerOptions"` property can be omitted, in which case the compiler's defaults are used. See the full list of supported [Compiler Options](https://github.com/Microsoft/TypeScript/wiki/Compiler-Options)
+
+If no `"files"` property is present in a `tsconfig.json`, the compiler defaults to including all TypeScript (*.ts or *.tsx) files in the containing directory and subdirectories. When a `"files"` property is present, only the specified files are included.
+
+If the `"exclude"` property is specified, the compiler includes all TypeScript (*.ts or *.tsx) files in the containing directory and subdirectories except for those files or folders that are excluded.
+
+The `"files"` property cannot be used in conjunction with the `"exclude"` property.
+
+Compiler options specified on the command line override those specified in the `tsconfig.json` file.
 
 # Typescript Types
 * Number
